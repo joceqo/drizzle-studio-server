@@ -1,12 +1,17 @@
 FROM node:20-alpine
 
+RUN apk add --no-cache nginx gettext
+
 WORKDIR /app
 
 COPY package.json ./
 RUN npm install
 
 COPY drizzle.config.ts ./
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY start.sh ./
+RUN chmod +x start.sh
 
-EXPOSE 4983
+EXPOSE 80
 
-CMD ["npm", "run", "studio"]
+CMD ["./start.sh"]
