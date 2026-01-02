@@ -1,6 +1,7 @@
 FROM node:20-alpine
 
-RUN apk add --no-cache nginx gettext
+RUN apk add --no-cache nginx && \
+    mkdir -p /var/log/nginx /run/nginx
 
 WORKDIR /app
 
