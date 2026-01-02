@@ -1,0 +1,15 @@
+{
+  "name": "drizzle-studio-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "studio": "drizzle-kit studio --host 0.0.0.0 --port 4983"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.38.3",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.1"
+  }
+}
